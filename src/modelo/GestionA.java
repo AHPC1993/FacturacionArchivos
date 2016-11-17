@@ -66,11 +66,15 @@ public class GestionA {
             BufferedReader br = new BufferedReader(fr);
             String linea;
             while ((linea = br.readLine()) != null) {
-                if (linea.equals(lineaVieja)) {
-                    modelo.addElement(lineaNueva);
-                } else {
-                    modelo.addElement(linea);
+                if (!linea.equals("")) {
+                    if (linea.equals(lineaVieja)) {
+                        modelo.addElement(lineaNueva);
+                    } else {
+                        modelo.addElement(linea);
+
+                    }
                 }
+
             }
 
             fr.close();

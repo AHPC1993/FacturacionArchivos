@@ -133,7 +133,13 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
+        btnReportes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnReportesMouseClicked(evt);
+            }
+        });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel1.setText("Nombres");
@@ -249,7 +255,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnAgregarCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnModificarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(btnModificarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 73, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarCliente)
                 .addContainerGap())
@@ -269,7 +275,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarCliente, btnEliminarCliente});
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstClientes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -333,7 +339,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        btnReportes.addTab("Clientes", pnlClientesTab);
+        btnReportes.addTab("Comercial", pnlClientesTab);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Acciones"));
 
@@ -366,7 +372,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnAgregarProductos)
                 .addGap(18, 18, 18)
-                .addComponent(btnModificarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(btnModificarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarProductos)
                 .addContainerGap())
@@ -383,7 +389,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarProductos, btnEliminarProductos});
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel5.setText("Referencia");
@@ -511,7 +517,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstProductos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -570,9 +576,9 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        btnReportes.addTab("Productos", pnlProductosTab);
+        btnReportes.addTab("Despacho", pnlProductosTab);
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstProductosVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -650,7 +656,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstHistorialVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -705,7 +711,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        btnReportes.addTab("Ventas", pnlVentasTab);
+        btnReportes.addTab("Facturación", pnlVentasTab);
 
         btnComprasPorMes.setText("Compras por mes");
 
@@ -796,16 +802,28 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
         //Se elimina del modelo el cliente que ha sido seleccionado.
-        modeloClientes.remove(lstClientes.getSelectedIndex());
-        gestionarArchivos.GuardarATexto("Archivos/clientes.txt", recorrerLista(lstClientes));
-        limpiarDatosClientes();
+        String[] datosCliente = extraerDatosSeleccionados(lstClientes.getSelectedValue());
+        String clienteEliminar = datosCliente[0] + " " + datosCliente[1] + " - " +datosCliente[2];
+        if (consultarEstadoParaEliminar(clienteEliminar, lstHistorialVentas)) {
+            modeloClientes.remove(lstClientes.getSelectedIndex());
+            gestionarArchivos.GuardarATexto("Archivos/clientes.txt", recorrerLista(lstClientes));
+            limpiarDatosClientes();
+        }else{
+            JOptionPane.showMessageDialog(this, "El cliente se encuentra registrado en las facturas, no puede ser eliminado");
+        }
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
 
     private void btnEliminarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductosActionPerformed
-         //Se elimina del modelo el cliente que ha sido seleccionado.
+        //Se elimina del modelo el cliente que ha sido seleccionado.
+        String[] datosProducto = extraerDatosSeleccionados(lstProductos.getSelectedValue());
+        String productoEliminar = datosProducto[0] + " - " + datosProducto[1] + " - " +datosProducto[2];
+        if (consultarEstadoParaEliminar(productoEliminar, lstHistorialVentas)) {
         modeloProductos.remove(lstProductos.getSelectedIndex());
         gestionarArchivos.GuardarATexto("Archivos/productos.txt", recorrerLista(lstProductos));
         limpiarDatosProductos();
+        } else{
+            JOptionPane.showMessageDialog(this, "El producto se encuentra registrado en las facturas, no puede ser eliminado");
+        }
     }//GEN-LAST:event_btnEliminarProductosActionPerformed
 
     private void txtCantidadVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadVentaKeyTyped
@@ -853,7 +871,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 //Se crea una instancia de la factura que se va a insertar 
                 factura = new Factura(1, nombreCategoria, referencia, nombreProducto, precio, talla, color, cantidadDisponible, 1, cantidadSolicitada, precioTotal);
                 //Se añade al modelo de ventas los datos que contendrá la factura
-                modeloHistorialVentas.addElement(fechaVenta + " - " + factura.toString() + " -- " + nombreCliente + " " + apellidoCliente + " - " + cedulaCliente + " - " + "Vigente");
+                modeloHistorialVentas.addElement(fechaVenta + " - " + factura.toString() + " -- " + nombreCliente + " " + apellidoCliente + " - " + cedulaCliente + " - " + "Vigente - Factura");
                 //Se añade a la lista del historial de facturas la nueva factura.
                 lstHistorialVentas.setModel(modeloHistorialVentas);
                 //Se guarda en el archivo de facturas.txt la nueva factura.
@@ -929,13 +947,15 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 String[] datosFactura = extraerDatosSeleccionados(facturaSeleccionada);
                 if ("Vigente".equals(datosFactura[11])) {
                     //Se reemplaza el estado de la factura seleccionada a el valor Anulada
-                    String nuevaFactura = facturaSeleccionada.replace("Vigente", "Anulada");
+                    String nuevaFactura = facturaSeleccionada.replace("Vigente", "Anulada").replace("Factura", "Nota Crédito");
+                   
                     //Se modifican los cambios en la lista de facturas
                     lstHistorialVentas.setModel(gestionarArchivos.modificarLista("Archivos/facturas.txt", lstHistorialVentas.getSelectedValue(), nuevaFactura));
                     //Se actualiza la lista de facturas.
                     modeloHistorialVentas = (DefaultListModel) lstHistorialVentas.getModel();
                     //Se guarda en el archivo facturas.txt el nuevo estado de la factura
                     gestionarArchivos.GuardarATexto("Archivos/facturas.txt", recorrerLista(lstHistorialVentas));
+
                 } else {
                     JOptionPane.showMessageDialog(this, "La factura seleccionada ya ha sido anulada.");
                 }
@@ -946,6 +966,19 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAnularFacturaActionPerformed
 
+    private void btnReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnReportesMouseClicked
+
+    public boolean consultarEstadoParaEliminar(String datoAEliminar, JList lista) {
+        for (int i = 0; i < lista.getModel().getSize(); i++) {
+            if (lista.getModel().getElementAt(i).toString().contains(datoAEliminar)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /**
      * Método encargado de guardar toda la información en las cajas de texto de
      * los clientes y dependiendo si dan clic al botón insertar o modificar
@@ -955,8 +988,8 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         //Se guarda la información de los clientes suministrada en las cajas de texto.
         String nombreCliente = txtNombreCliente.getText();
         String apellidoCliente = txtApellidosCliente.getText();
-        String cedulaCliente = txtCedulaCliente.getText();
-        String telefonoCliente = txtTelefonoCliente.getText();
+        String cedulaCliente = txtCedulaCliente.getText().trim();
+        String telefonoCliente = txtTelefonoCliente.getText().trim();
         //Se guardan todos los datos en un arrayList con el fin de validar los datos posteriormente.
         datos = new ArrayList<>();
         datos.add(nombreCliente);
@@ -967,14 +1000,16 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             clientes = new Clientes(nombreCliente, apellidoCliente, Integer.parseInt(cedulaCliente), Integer.parseInt(telefonoCliente));
             //Si el cliente da clic en el botón modificar
             if (accion.equals("modificar")) {
-                lstClientes.setModel(gestionarArchivos.modificarLista("Archivos/clientes.txt", lstClientes.getSelectedValue(), clientes.toString()));
+            
+                lstClientes.setModel(gestionarArchivos.modificarLista("Archivos/clientes.txt", lstClientes.getSelectedValue().replace("\n", ""), clientes.toString()));
                 lstClientesVentas.setModel(gestionarArchivos.modificarLista("Archivos/clientes.txt", lstClientes.getSelectedValue(), clientes.toString()));
                 modeloClientes = (DefaultListModel) lstClientes.getModel();
+                lstClientesVentas.setModel(modeloClientes);
             } //Si el cliente da clic en el botón insertar
             else if (accion.equals("insertar")) {
                 modeloClientes.addElement(clientes.toString());
                 lstClientes.setModel(modeloClientes);
-                lstClientes.setModel(modeloClientes);
+                lstClientesVentas.setModel(modeloClientes);
             }
             //Se guarda el cliente en el archivo de texto clientes.txt
             gestionarArchivos.GuardarATexto("Archivos/clientes.txt", recorrerLista(lstClientes));
@@ -993,14 +1028,13 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     public void guardarInformacionProductos(String accion) {
         //Se guarda la información de los productos suministrada en las cajas de texto.
         String nombreCategoria = cboCategoriaProductos.getSelectedItem().toString();
-        int referencia = Integer.parseInt(txtReferenciaProducto.getText());
+        int referencia = Integer.parseInt(txtReferenciaProducto.getText().trim());
         String nombreProducto = txtNombreProducto.getText();
-        double precio = Double.parseDouble(txtPrecioProductos.getText());
+        double precio = Double.parseDouble(txtPrecioProductos.getText().trim());
         String talla = cboTallasProductos.getSelectedItem().toString();
         String color = txtColorProductos.getText();
-        int cantidadDisponible = Integer.parseInt(txtCantidadProductos.getText());
+        int cantidadDisponible = Integer.parseInt(txtCantidadProductos.getText().trim());
         //Se guardan todos los datos en un arrayList con el fin de validar los datos posteriormente.
-
         datos = new ArrayList<>();
         datos.add(nombreCategoria);
         datos.add(referencia);
@@ -1015,9 +1049,11 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             productos = new Productos(1, nombreCategoria, referencia, nombreProducto, precio, talla, color, cantidadDisponible);
             //Si dan clic en el botón modificar
             if (accion.equals("modificar")) {
-                lstProductos.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", lstProductos.getSelectedValue(), productos.toString()));
+                System.out.println("Nuevo: " + productos.toString() + "\n Viejo: " + lstProductos.getSelectedValue());
+                lstProductos.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", lstProductos.getSelectedValue().replace("\n", ""), productos.toString()));
                 lstProductosVentas.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", lstProductos.getSelectedValue(), productos.toString()));
                 modeloProductos = (DefaultListModel) lstProductos.getModel();
+                lstProductosVentas.setModel(modeloProductos);
             }//Si dan clic en el botón insertar 
             else if (accion.equals("insertar")) {
                 modeloProductos.addElement(productos.toString());
