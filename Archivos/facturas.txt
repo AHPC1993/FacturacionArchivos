@@ -10,3 +10,4 @@
 2016-10-17-12:11 - Pantalón - 67 - Levis - 56000.0 - XS - Azul 2 - 100 - 6 - 336000.0 -- Daniel Garcia Cardona - 1035 - Vigente
 2016-10-17-12:25 - Pantalón - 67 - Levis - 56000.0 - XS - Azul 2 - 94 - 6 - 336000.0 -- Allan Perez c - 1053825 - VigenteFactura
 2016-10-17-12:26 - Pantalón - 67 - Levis - 56000.0 - XS - Azul 2 - 88 - 12 - 672000.0 -- Daniel Garcia Cardona - 1035 - Anulada - Nota Crédito
+2016-10-17-17:46 - Pantalón - 66 - Levis - 56000.0 - XS - Azul 2 - 76 - 11 - 616000.0 -- 123213 asdasd - 122 - Vigente - Factura

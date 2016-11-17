@@ -42,6 +42,10 @@ public class FacturarPrincipal extends javax.swing.JFrame {
      */
     public FacturarPrincipal() {
         initComponents();
+
+        dlgLogin.setSize(692, 345);
+        dlgLogin.setLocationRelativeTo(this);
+        dlgLogin.setVisible(true);
         //Se inicializan todos los modelos y los objetos.
         modeloClientes = new DefaultListModel<>();
         modeloProductos = new DefaultListModel<>();
@@ -71,7 +75,14 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnReportes = new javax.swing.JTabbedPane();
+        dlgLogin = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        btnIniciarSesion = new javax.swing.JButton();
+        txtUsuario = new javax.swing.JTextField();
+        txtContrasena = new javax.swing.JPasswordField();
+        tabPaneOpciones = new javax.swing.JTabbedPane();
         pnlClientesTab = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -131,15 +142,81 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         btnComprasPorMes = new javax.swing.JButton();
         btnProductoMasVendido = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciar Sesión", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), java.awt.Color.red)); // NOI18N
 
-        btnReportes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnReportesMouseClicked(evt);
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setText("Usuario");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel16.setText("Contraseña");
+
+        btnIniciarSesion.setText("Iniciar Sesión");
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSesionActionPerformed(evt);
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel12))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(txtUsuario)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(btnIniciarSesion)))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(btnIniciarSesion)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout dlgLoginLayout = new javax.swing.GroupLayout(dlgLogin.getContentPane());
+        dlgLogin.getContentPane().setLayout(dlgLoginLayout);
+        dlgLoginLayout.setHorizontalGroup(
+            dlgLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgLoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        dlgLoginLayout.setVerticalGroup(
+            dlgLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgLoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tabPaneOpciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabPaneOpcionesMouseClicked(evt);
+            }
+        });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel1.setText("Nombres");
@@ -275,7 +352,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarCliente, btnEliminarCliente});
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstClientes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -339,7 +416,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        btnReportes.addTab("Comercial", pnlClientesTab);
+        tabPaneOpciones.addTab("Comercial", pnlClientesTab);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Acciones"));
 
@@ -389,7 +466,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarProductos, btnEliminarProductos});
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel5.setText("Referencia");
@@ -517,7 +594,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstProductos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -576,9 +653,9 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        btnReportes.addTab("Despacho", pnlProductosTab);
+        tabPaneOpciones.addTab("Despacho", pnlProductosTab);
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstProductosVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -656,7 +733,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", 0, 0, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
 
         lstHistorialVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -711,7 +788,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        btnReportes.addTab("Facturación", pnlVentasTab);
+        tabPaneOpciones.addTab("Facturación", pnlVentasTab);
 
         btnComprasPorMes.setText("Compras por mes");
 
@@ -738,7 +815,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(578, Short.MAX_VALUE))
         );
 
-        btnReportes.addTab("Reportes", jPanel9);
+        tabPaneOpciones.addTab("Reportes", jPanel9);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -746,11 +823,11 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnReportes))
+                .addComponent(tabPaneOpciones))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnReportes)
+            .addComponent(tabPaneOpciones)
         );
 
         pack();
@@ -803,12 +880,12 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
         //Se elimina del modelo el cliente que ha sido seleccionado.
         String[] datosCliente = extraerDatosSeleccionados(lstClientes.getSelectedValue());
-        String clienteEliminar = datosCliente[0] + " " + datosCliente[1] + " - " +datosCliente[2];
+        String clienteEliminar = datosCliente[0] + " " + datosCliente[1] + " - " + datosCliente[2];
         if (consultarEstadoParaEliminar(clienteEliminar, lstHistorialVentas)) {
             modeloClientes.remove(lstClientes.getSelectedIndex());
             gestionarArchivos.GuardarATexto("Archivos/clientes.txt", recorrerLista(lstClientes));
             limpiarDatosClientes();
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "El cliente se encuentra registrado en las facturas, no puede ser eliminado");
         }
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
@@ -816,12 +893,12 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private void btnEliminarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductosActionPerformed
         //Se elimina del modelo el cliente que ha sido seleccionado.
         String[] datosProducto = extraerDatosSeleccionados(lstProductos.getSelectedValue());
-        String productoEliminar = datosProducto[0] + " - " + datosProducto[1] + " - " +datosProducto[2];
+        String productoEliminar = datosProducto[0] + " - " + datosProducto[1] + " - " + datosProducto[2];
         if (consultarEstadoParaEliminar(productoEliminar, lstHistorialVentas)) {
-        modeloProductos.remove(lstProductos.getSelectedIndex());
-        gestionarArchivos.GuardarATexto("Archivos/productos.txt", recorrerLista(lstProductos));
-        limpiarDatosProductos();
-        } else{
+            modeloProductos.remove(lstProductos.getSelectedIndex());
+            gestionarArchivos.GuardarATexto("Archivos/productos.txt", recorrerLista(lstProductos));
+            limpiarDatosProductos();
+        } else {
             JOptionPane.showMessageDialog(this, "El producto se encuentra registrado en las facturas, no puede ser eliminado");
         }
     }//GEN-LAST:event_btnEliminarProductosActionPerformed
@@ -948,7 +1025,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 if ("Vigente".equals(datosFactura[11])) {
                     //Se reemplaza el estado de la factura seleccionada a el valor Anulada
                     String nuevaFactura = facturaSeleccionada.replace("Vigente", "Anulada").replace("Factura", "Nota Crédito");
-                   
+
                     //Se modifican los cambios en la lista de facturas
                     lstHistorialVentas.setModel(gestionarArchivos.modificarLista("Archivos/facturas.txt", lstHistorialVentas.getSelectedValue(), nuevaFactura));
                     //Se actualiza la lista de facturas.
@@ -966,9 +1043,32 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAnularFacturaActionPerformed
 
-    private void btnReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportesMouseClicked
+    private void tabPaneOpcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabPaneOpcionesMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnReportesMouseClicked
+    }//GEN-LAST:event_tabPaneOpcionesMouseClicked
+
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+        String usuario = txtUsuario.getText();
+        String contrasena = String.valueOf(txtContrasena.getPassword());
+        DefaultListModel listaUsuarios = gestionarArchivos.lista("Archivos/usuarios.txt");
+        for (int i = 0; i < listaUsuarios.getSize(); i++) {
+            if (listaUsuarios.get(i).toString().contains(usuario + " - " + contrasena)) {
+                if (listaUsuarios.get(i).toString().contains("facturacion")) {
+                    tabPaneOpciones.setEnabledAt(0, false);             
+                    tabPaneOpciones.setEnabledAt(3, false);             
+                } else if (listaUsuarios.get(i).toString().contains("despacho")) {
+                        
+                } else if (listaUsuarios.get(i).toString().contains("comercial")) {
+
+                }
+                JOptionPane.showMessageDialog(this, "Bienvenido " + usuario);
+
+                this.setVisible(true);            
+                dlgLogin.setVisible(false);
+                
+            }
+        }
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     public boolean consultarEstadoParaEliminar(String datoAEliminar, JList lista) {
         for (int i = 0; i < lista.getModel().getSize(); i++) {
@@ -1000,7 +1100,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             clientes = new Clientes(nombreCliente, apellidoCliente, Integer.parseInt(cedulaCliente), Integer.parseInt(telefonoCliente));
             //Si el cliente da clic en el botón modificar
             if (accion.equals("modificar")) {
-            
+
                 lstClientes.setModel(gestionarArchivos.modificarLista("Archivos/clientes.txt", lstClientes.getSelectedValue().replace("\n", ""), clientes.toString()));
                 lstClientesVentas.setModel(gestionarArchivos.modificarLista("Archivos/clientes.txt", lstClientes.getSelectedValue(), clientes.toString()));
                 modeloClientes = (DefaultListModel) lstClientes.getModel();
@@ -1191,23 +1291,31 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FacturarPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FacturarPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FacturarPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FacturarPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FacturarPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FacturarPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FacturarPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FacturarPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FacturarPrincipal().setVisible(true);
+                new FacturarPrincipal().setVisible(false);
             }
         });
     }
@@ -1219,19 +1327,22 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnComprasPorMes;
     private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton btnEliminarProductos;
+    private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton btnModificarCliente;
     private javax.swing.JButton btnModificarProductos;
     private javax.swing.JButton btnProductoMasVendido;
     private javax.swing.JButton btnRealizarVenta;
-    private javax.swing.JTabbedPane btnReportes;
     private javax.swing.JComboBox<String> cboCategoriaProductos;
     private javax.swing.JComboBox<String> cboTallasProductos;
+    private javax.swing.JDialog dlgLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1241,6 +1352,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1262,15 +1374,18 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlClientesTab;
     private javax.swing.JPanel pnlProductosTab;
     private javax.swing.JPanel pnlVentasTab;
+    private javax.swing.JTabbedPane tabPaneOpciones;
     private javax.swing.JTextField txtApellidosCliente;
     private javax.swing.JTextField txtCantidadProductos;
     private javax.swing.JTextField txtCantidadVenta;
     private javax.swing.JTextField txtCedulaCliente;
     private javax.swing.JTextField txtColorProductos;
+    private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtPrecioProductos;
     private javax.swing.JTextField txtReferenciaProducto;
     private javax.swing.JTextField txtTelefonoCliente;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
