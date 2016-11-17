@@ -1,0 +1,8 @@
+2016-10-15-20:27 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 100 - 5 - 225000.0 -- Daniel Garcia Cardona - 1035 - Anulada
+2016-10-15-21:21 - Pantalón - 111 - Levis - 45000.0 - XXL - Negro - 100 - 50 - 2250000.0 -- Daniel Garcia Cardona - 1035 - Vigente
+2016-10-15-21:22 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 100 - 20 - 900000.0 -- Daniel Garcia Cardona - 1035 - Vigente
+2016-10-15-21:23 - Pantalón - 111 - Levis - 45000.0 - XXL - Negro - 50 - 5 - 225000.0 -- Daniel Garcia Cardona - 1035 - Anulada
+2016-10-15-21:23 - Pantalón - 111 - Levis - 44500.0 - XXL - Negro - 45 - 4 - 178000.0 -- Daniel Garcia Cardona - 1035 - Vigente
+2016-10-15-21:32 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 60 - 45 - 2025000.0 -- Allan Perez - 1053 - Vigente
+2016-10-15-21:32 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 15 - 5 - 225000.0 -- Daniel Garcia Cardona - 1035 - Anulada
+2016-10-15-21:32 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 10 - 10 - 450000.0 -- Daniel Garcia Cardona - 1035 - Vigente
