@@ -216,7 +216,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel1.setText("Nombres");
@@ -332,7 +332,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnAgregarCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnModificarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(btnModificarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarCliente)
                 .addContainerGap())
@@ -352,7 +352,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarCliente, btnEliminarCliente});
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstClientes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -449,7 +449,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnAgregarProductos)
                 .addGap(18, 18, 18)
-                .addComponent(btnModificarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(btnModificarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarProductos)
                 .addContainerGap())
@@ -466,7 +466,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarProductos, btnEliminarProductos});
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel5.setText("Referencia");
@@ -594,7 +594,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstProductos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -655,7 +655,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         tabPaneOpciones.addTab("Despacho", pnlProductosTab);
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstProductosVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -733,7 +733,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstHistorialVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -793,6 +793,11 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         btnComprasPorMes.setText("Compras por mes");
 
         btnProductoMasVendido.setText("Producto más vendido");
+        btnProductoMasVendido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductoMasVendidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -958,6 +963,10 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 lstProductosVentas.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", producto, productoModificado));
                 modeloProductos = (DefaultListModel) lstProductos.getModel();
                 gestionarArchivos.GuardarATexto("Archivos/productos.txt", recorrerLista(lstProductos));
+                //Se limpian los datos de facturación
+                txtCantidadVenta.setText("");
+                lstClientesVentas.clearSelection();
+                lstProductosVentas.clearSelection();
             } else {
                 JOptionPane.showMessageDialog(this, "No hay cantidad suficiente para realizar la venta.");
 
@@ -1054,21 +1063,42 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         for (int i = 0; i < listaUsuarios.getSize(); i++) {
             if (listaUsuarios.get(i).toString().contains(usuario + " - " + contrasena)) {
                 if (listaUsuarios.get(i).toString().contains("facturacion")) {
-                    tabPaneOpciones.setEnabledAt(0, false);             
-                    tabPaneOpciones.setEnabledAt(3, false);             
+                    tabPaneOpciones.setEnabledAt(0, false);
+                    tabPaneOpciones.setEnabledAt(3, false);
                 } else if (listaUsuarios.get(i).toString().contains("despacho")) {
-                        
+
                 } else if (listaUsuarios.get(i).toString().contains("comercial")) {
 
                 }
                 JOptionPane.showMessageDialog(this, "Bienvenido " + usuario);
 
-                this.setVisible(true);            
+                this.setVisible(true);
                 dlgLogin.setVisible(false);
-                
+
+            }else{
+                JOptionPane.showMessageDialog(this, "Datos incorrectos, revíselos y vuelva a intentarlo");
             }
         }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
+    private void btnProductoMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoMasVendidoActionPerformed
+        String[][] productosMasVendidos = new String[modeloHistorialVentas.getSize()][2];
+        for (int i = 0; i < modeloHistorialVentas.getSize(); i++) {
+            String datosProducto[] = extraerDatosSeleccionados(modeloHistorialVentas.getElementAt(i).toString());
+            productosMasVendidos[i][0] = datosProducto[1] + " - " + datosProducto[2] + " - " + datosProducto[3] + " - " + datosProducto[4] + " - " + datosProducto[5] + " - " + datosProducto[6];
+            int cantidadPorProducto = 0;
+            for (int j = 0; j < modeloHistorialVentas.getSize(); j++) {
+                if(modeloHistorialVentas.getElementAt(j).toString().contains(productosMasVendidos[i][0])){
+                    cantidadPorProducto+=Integer.parseInt(datosProducto[8]);
+                }
+            }
+            productosMasVendidos[i][1]= cantidadPorProducto+"";
+        }
+        for (int i = 0; i < productosMasVendidos.length; i++) {
+            System.out.println(productosMasVendidos[i][0] + productosMasVendidos[i][1]);
+        }
+
+    }//GEN-LAST:event_btnProductoMasVendidoActionPerformed
 
     public boolean consultarEstadoParaEliminar(String datoAEliminar, JList lista) {
         for (int i = 0; i < lista.getModel().getSize(); i++) {

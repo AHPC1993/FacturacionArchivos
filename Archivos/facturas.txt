@@ -1,13 +1,6 @@
-2016-10-15-20:27 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 100 - 5 - 225000.0 -- Daniel Garcia Cardona - 1035 - Anulada
-2016-10-15-21:21 - Pantalón - 111 - Levis - 45000.0 - XXL - Negro - 100 - 50 - 2250000.0 -- Daniel Garcia Cardona - 1035 - Anulada
-2016-10-15-21:22 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 100 - 20 - 900000.0 -- Daniel Garcia Cardona - 1035 - Vigente
-2016-10-15-21:23 - Pantalón - 111 - Levis - 45000.0 - XXL - Negro - 50 - 5 - 225000.0 -- Daniel Garcia Cardona - 1035 - Anulada
-2016-10-15-21:23 - Pantalón - 111 - Levis - 44500.0 - XXL - Negro - 45 - 4 - 178000.0 -- Daniel Garcia Cardona - 1035 - Vigente
-2016-10-15-21:32 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 60 - 45 - 2025000.0 -- Allan Perez - 1053 - Vigente
-2016-10-15-21:32 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 15 - 5 - 225000.0 -- Daniel Garcia Cardona - 1035 - Anulada
-2016-10-15-21:32 - Pantalón - 8654 - Diesel - 45000.0 - XXL - Negro - 10 - 10 - 450000.0 -- Daniel Garcia Cardona - 1035 - Vigente
-2016-10-17-12:2 - Pantalón - 7788 - Diesel - 45000.0 - XXL - Negro - 100 - 60 - 2700000.0 -- Allan Perez c - 1053825 - Vigente
-2016-10-17-12:11 - Pantalón - 67 - Levis - 56000.0 - XS - Azul 2 - 100 - 6 - 336000.0 -- Daniel Garcia Cardona - 1035 - Vigente
-2016-10-17-12:25 - Pantalón - 67 - Levis - 56000.0 - XS - Azul 2 - 94 - 6 - 336000.0 -- Allan Perez c - 1053825 - VigenteFactura
 2016-10-17-12:26 - Pantalón - 67 - Levis - 56000.0 - XS - Azul 2 - 88 - 12 - 672000.0 -- Daniel Garcia Cardona - 1035 - Anulada - Nota Crédito
 2016-10-17-17:46 - Pantalón - 66 - Levis - 56000.0 - XS - Azul 2 - 76 - 11 - 616000.0 -- 123213 asdasd - 122 - Vigente - Factura
+2016-10-17-21:14 - Pantalón - 7788 - Diesel - 45000.0 - XXL - Negro - 40 - 12 - 540000.0 -- Allan sd Garcia Cardona - 1035 - Vigente - Factura
+2016-10-17-21:14 - Pantalón - 7788 - Diesel - 45000.0 - XXL - Negro - 28 - 15 - 675000.0 -- Allan sd Garcia Cardona - 1035 - Vigente - Factura
+2016-10-17-21:15 - Pantalón - 66 - Levis - 56000.0 - XS - Azul 2 - 65 - 15 - 840000.0 -- 123213 asdasd - 122 - Vigente - Factura
+2016-10-17-21:16 - Pantalón - 7788 - Diesel - 45000.0 - XXL - Negro - 13 - 1 - 45000.0 -- 123213 asdasd - 122 - Vigente - Factura
