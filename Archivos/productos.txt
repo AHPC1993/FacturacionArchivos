@@ -1,3 +1,6 @@
 Pantalón - 7788 - Diesel - XXL - Negro - 45000.0 - 12
 Camisas - 75 - Polo - L - Rojo - 56000.0 - 1
-Pantalón - 66 - Levis - XS - Azul 2 - 56000.0 - 50
+Pantalón - 66 - Levis - XS - Azul 2 - 56000.0 - 40
+Blusas - 1 - 1 - XS - 1 - 1.0 - 1
+Blusas - 123 - Poo - XS - Rosada - 20000.0 - 39
+Zapatos - 11 - Mariposas - L - negro - 10000.0 - 12
