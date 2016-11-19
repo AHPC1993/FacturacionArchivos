@@ -9,7 +9,11 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -165,8 +169,6 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         btnSalirFacturacion = new javax.swing.JButton();
         btnProductoMasVendido = new javax.swing.JButton();
-        pnlReportes = new javax.swing.JPanel();
-        btnComprasPorMes = new javax.swing.JButton();
 
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciar Sesión", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), java.awt.Color.red)); // NOI18N
 
@@ -234,7 +236,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         jLabel23.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel23.setText("Referencia");
@@ -260,7 +262,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel26.setText("Color");
 
-        cboTallasProductosDialog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XS", "X", "M", "L", "XL", "XXL", "XXXL" }));
+        cboTallasProductosDialog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "XS", "S", "M", "L", "XL", "XXL", "XXXL" }));
 
         jLabel27.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel27.setText("Precio");
@@ -389,7 +391,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel1.setText("Nombres");
@@ -505,7 +507,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnAgregarCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnModificarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(btnModificarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarCliente)
                 .addContainerGap())
@@ -525,7 +527,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarCliente, btnEliminarCliente});
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstClientes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -550,7 +552,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -579,15 +581,14 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlClientesTabLayout.createSequentialGroup()
-                        .addGroup(pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnlClientesTabLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnSalirProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlClientesTabLayout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(66, 66, 66)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(22, 22, 22))))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlClientesTabLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSalirProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(175, 175, 175))))
         );
         pnlClientesTabLayout.setVerticalGroup(
             pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -598,9 +599,9 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addGroup(pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSalirProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         tabPaneOpciones.addTab("Comercial", pnlClientesTab);
@@ -636,7 +637,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnAgregarProductos)
                 .addGap(18, 18, 18)
-                .addComponent(btnModificarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(btnModificarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminarProductos)
                 .addContainerGap())
@@ -653,7 +654,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregarProductos, btnEliminarProductos});
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel5.setText("Referencia");
@@ -679,7 +680,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel8.setText("Color");
 
-        cboTallasProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XS", "X", "M", "L", "XL", "XXL", "XXXL" }));
+        cboTallasProductos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "XS", "S", "M", "L", "XL", "XXL", "XXXL" }));
 
         jLabel13.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel13.setText("Precio");
@@ -781,7 +782,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstProductos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -801,7 +802,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -830,15 +831,14 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductosTabLayout.createSequentialGroup()
-                        .addGroup(pnlProductosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnlProductosTabLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnSalirProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlProductosTabLayout.createSequentialGroup()
-                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(22, 22, 22))))
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductosTabLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSalirProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(236, 236, 236))))
         );
         pnlProductosTabLayout.setVerticalGroup(
             pnlProductosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -849,14 +849,14 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addGroup(pnlProductosTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addComponent(btnSalirProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         tabPaneOpciones.addTab("Despacho", pnlProductosTab);
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Realizar una venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstProductosVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -934,7 +934,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), java.awt.Color.red)); // NOI18N
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de ventas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
 
         lstHistorialVentas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -999,10 +999,6 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(pnlVentasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlVentasTabLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalirFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71))
                     .addGroup(pnlVentasTabLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlVentasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1010,8 +1006,11 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel21)
                             .addComponent(jLabel22)
                             .addComponent(btnLlamarDialogCrearProducto)
-                            .addComponent(btnProductoMasVendido))
-                        .addContainerGap(28, Short.MAX_VALUE))))
+                            .addComponent(btnProductoMasVendido)))
+                    .addGroup(pnlVentasTabLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(btnSalirFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         pnlVentasTabLayout.setVerticalGroup(
             pnlVentasTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1038,31 +1037,10 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlVentasTabLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalirFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))))
+                        .addGap(67, 67, 67))))
         );
 
         tabPaneOpciones.addTab("Facturación", pnlVentasTab);
-
-        btnComprasPorMes.setText("Compras por mes");
-
-        javax.swing.GroupLayout pnlReportesLayout = new javax.swing.GroupLayout(pnlReportes);
-        pnlReportes.setLayout(pnlReportesLayout);
-        pnlReportesLayout.setHorizontalGroup(
-            pnlReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlReportesLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnComprasPorMes, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1040, Short.MAX_VALUE))
-        );
-        pnlReportesLayout.setVerticalGroup(
-            pnlReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlReportesLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(btnComprasPorMes, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(578, Short.MAX_VALUE))
-        );
-
-        tabPaneOpciones.addTab("Reportes", pnlReportes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1206,8 +1184,8 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 //Se guarda en el archivo de facturas.txt la nueva factura.
                 gestionarArchivos.GuardarATexto("Archivos/facturas.txt", recorrerLista(lstHistorialVentas));
                 //Se actualiza el producto y la cantidad existente tanto en  la lista de productos como en la lista de ventas.
-                lstProductos.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", producto, productoModificado));
-                lstProductosVentas.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", producto, productoModificado));
+                lstProductos.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", producto.replace("\n", ""), productoModificado));
+                lstProductosVentas.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", producto.replace("\n", ""), productoModificado));
                 modeloProductos = (DefaultListModel) lstProductos.getModel();
                 gestionarArchivos.GuardarATexto("Archivos/productos.txt", recorrerLista(lstProductos));
                 //Se limpian los datos de facturación
@@ -1278,15 +1256,16 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
                 String[] datosFactura = extraerDatosSeleccionados(facturaSeleccionada);
-                if ("Vigente".equals(datosFactura[11])) {
+                if ("Vigente".equals(datosFactura[11]) && "Factura".equals(datosFactura[12])) {
                     //Se crea la nota crédito
-                    String notaCredito = datosFactura[0] + " - " + datosFactura[1] + " - " + datosFactura[2] + " - " + datosFactura[3] + " - " + datosFactura[4] + " - " + datosFactura[5] + " - " + datosFactura[6] + " - " + datosFactura[7] + " - " + datosFactura[8] + " - -" + datosFactura[9] + " - " + datosFactura[10] + " - " + "Anulada" + " - " + "Nota Crédito";
+                    String notaCredito = datosFactura[0] + " - " + datosFactura[1] + " - " + datosFactura[2] + " - " + datosFactura[3] + " - " + datosFactura[4] + " - " + datosFactura[5] + " - " + datosFactura[6] + " - " + datosFactura[7] + " - " + datosFactura[8] + " - -" + datosFactura[9] + " - " + datosFactura[10] + " - " + "Vigente" + " - " + "Nota Crédito";
                     //Se reemplaza el estado de la factura seleccionada a el valor Anulada
                     String nuevaFactura = facturaSeleccionada.replace("Vigente", "Anulada");
+                    //Se añade la nueva nota crédito
                     modeloHistorialVentas.addElement(notaCredito);
                     //Se añade a la lista del historial de facturas la nueva factura.
                     lstHistorialVentas.setModel(modeloHistorialVentas);
-                    //Se guarda en el archivo de facturas.txt la nueva factura.
+                    //Se guarda en el archivo de facturas.txt la nueva factura(nota crédito).
                     gestionarArchivos.GuardarATexto("Archivos/facturas.txt", recorrerLista(lstHistorialVentas));
 
                     //Se modifican los cambios en la lista de facturas
@@ -1317,62 +1296,98 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     public String iniciarSesion() {
-        if(!txtUsuario.getText().isEmpty() || !txtContrasena.getText().isEmpty()){
-        String usuario = txtUsuario.getText();
-        String contrasena = String.valueOf(txtContrasena.getPassword());
-        DefaultListModel listaUsuarios = gestionarArchivos.lista("Archivos/usuarios.txt");
-        int contador = 0;
-        String rol = "";
-        while (contador < listaUsuarios.getSize()) {
-            if (listaUsuarios.get(contador).toString().contains(usuario + " - " + contrasena)) {
-                if (listaUsuarios.get(contador).toString().contains("facturacion")) {
-                    tabPaneOpciones.setEnabledAt(0, false);
-                    tabPaneOpciones.setEnabledAt(1, false);
-                    tabPaneOpciones.setEnabledAt(3, false);
-                    tabPaneOpciones.setSelectedIndex(2);
-                    rol = "facturador";
-                } else if (listaUsuarios.get(contador).toString().contains("despacho")) {
-                    tabPaneOpciones.setEnabledAt(0, false);
-                    tabPaneOpciones.setEnabledAt(2, false);
-                    tabPaneOpciones.setEnabledAt(3, false);
-                    tabPaneOpciones.setSelectedIndex(1);
-                    rol = "despacho";
-                } else if (listaUsuarios.get(contador).toString().contains("comercial")) {
-                    tabPaneOpciones.setSelectedIndex(0);
-                    tabPaneOpciones.setEnabledAt(1, false);
-                    tabPaneOpciones.setEnabledAt(2, false);
-                    tabPaneOpciones.setEnabledAt(3, false);
-                    rol = "comercial";
+        if (!txtUsuario.getText().isEmpty() || !txtContrasena.getText().isEmpty()) {
+            String usuario = txtUsuario.getText();
+            String contrasena = String.valueOf(txtContrasena.getPassword());
+            DefaultListModel listaUsuarios = gestionarArchivos.lista("Archivos/usuarios.txt");
+            int contador = 0;
+            String rol = "";
+            while (contador < listaUsuarios.getSize()) {
+                if (listaUsuarios.get(contador).toString().contains(usuario + " - " + contrasena)) {
+                    if (listaUsuarios.get(contador).toString().contains("facturacion")) {
+                        tabPaneOpciones.setEnabledAt(0, false);
+                        tabPaneOpciones.setEnabledAt(1, false);
+                        tabPaneOpciones.setSelectedIndex(2);
+                        rol = "facturador";
+                    } else if (listaUsuarios.get(contador).toString().contains("despacho")) {
+                        tabPaneOpciones.setEnabledAt(0, false);
+                        tabPaneOpciones.setEnabledAt(2, false);
+                        tabPaneOpciones.setSelectedIndex(1);
+                        rol = "despacho";
+                    } else if (listaUsuarios.get(contador).toString().contains("comercial")) {
+                        tabPaneOpciones.setSelectedIndex(0);
+                        tabPaneOpciones.setEnabledAt(1, false);
+                        tabPaneOpciones.setEnabledAt(2, false);
+                        rol = "comercial";
+                    } else if (listaUsuarios.get(contador).toString().contains("admin")) {
+                        tabPaneOpciones.setSelectedIndex(0);
+                        rol = "Administrador";
+                    }
+                    this.setVisible(true);
+                    dlgLogin.setVisible(false);
+                    return "Bienvenido: " + usuario + "\nsu rol es: " + rol;
+                } else {
+                    contador++;
                 }
-                this.setVisible(true);
-                dlgLogin.setVisible(false);
-                return "Bienvenido: " + usuario + "\nsu rol es: " + rol;
-            } else {
-                contador++;
             }
-        }
-        return "Datos incorrectos, por favor revise e intente nuevamente";
-        }else{
+            return "Datos incorrectos, por favor revise e intente nuevamente";
+        } else {
             return "Por favor rellene los datos.";
         }
     }
 
     private void btnProductoMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoMasVendidoActionPerformed
+        //Se crea una matriz que contendrá en la primer posición el producto vendido y en la segunda la cantidad que se ha vendido.
         String[][] productosMasVendidos = new String[modeloHistorialVentas.getSize()][2];
+        //Se recorre la lista del historial de ventas
         for (int i = 0; i < modeloHistorialVentas.getSize(); i++) {
+            //Se miran los datos del producto que se va a comparar contra toda la lista del historial de ventas
             String datosProducto[] = extraerDatosSeleccionados(modeloHistorialVentas.getElementAt(i).toString());
+            //Se agrega a la matriz en la posición i el producto.
             productosMasVendidos[i][0] = datosProducto[1] + " - " + datosProducto[2] + " - " + datosProducto[3] + " - " + datosProducto[4] + " - " + datosProducto[5] + " - " + datosProducto[6];
+            //Se crea un entero que tendrá la cantidad que se ha vendido por producto.
             int cantidadPorProducto = 0;
+            //Se hace un segundo for, para comparar el producto de la matriz, contra el historial de ventas.
             for (int j = 0; j < modeloHistorialVentas.getSize(); j++) {
+                //Se extraen los datos del producto que se está iterando.
+                String datosProductoSeleccionado[] = extraerDatosSeleccionados(modeloHistorialVentas.getElementAt(j).toString());
+                //Se pregunta si el elemento iterado contiene al elemento buscado, de ser así se aumenta la cantidad vendida para ese producto.
                 if (modeloHistorialVentas.getElementAt(j).toString().contains(productosMasVendidos[i][0])) {
-                    cantidadPorProducto += Integer.parseInt(datosProducto[8]);
+                    cantidadPorProducto += Integer.parseInt(datosProductoSeleccionado[8]);
                 }
             }
+            //Después de recorrer el for, se tiene el total vendido para ese producto.
             productosMasVendidos[i][1] = cantidadPorProducto + "";
         }
-//        for (int i = 0; i < productosMasVendidos.length; i++) {
-        System.out.println(productosMasVendidos[0][0] + productosMasVendidos[0][1]);
-//        }
+        //Se crea una lista con el top de productos vendidos
+        List<String> topProductosVendidos = new ArrayList<>();
+        //Se utiliza el set con el fin de eliminar los elementos duplicados.
+        Set<String> quitarDuplicados = new HashSet<>();
+        //Se agrega a la lista top los productos más vendidos
+        for (int i = 0; i < productosMasVendidos.length; i++) {
+            topProductosVendidos.add(productosMasVendidos[i][1] + " productos vendidos de: " + productosMasVendidos[i][0]);
+
+        }
+        //Se quitan los elementos duplicados con estas 3 líneas.
+        //Se añade al set todos los productos existentes, al añadirlos, se eliminan los repetidos
+        quitarDuplicados.addAll(topProductosVendidos);
+        //Se limpia la lista del top de productos 
+        topProductosVendidos.clear();
+        //Se añadenuevamente a la lista top los productos desde el set.
+        topProductosVendidos.addAll(quitarDuplicados);
+
+        //Se ordenan los productos en cantidad de ventas 
+        Collections.sort(topProductosVendidos);
+        //Se crea un string que mostrará el top de productos
+        String productosMasVendidosMostrar = "";
+        //Se recorre la lista del último hasta el primero, ya que están ordenados en forma ascendente y se busca mostrarlos en forma descendente
+        for (int i = topProductosVendidos.size() - 1; i >= 0; i--) {
+            productosMasVendidosMostrar += topProductosVendidos.get(i) + "\n";
+            System.out.println(topProductosVendidos.get(i));
+        }
+        //Se imprime el top de productos por cantidad.
+        JOptionPane.showMessageDialog(rootPane, "Estos son el top de productos vendidos en orden: \n" + productosMasVendidosMostrar);
+
 
     }//GEN-LAST:event_btnProductoMasVendidoActionPerformed
 
@@ -1454,7 +1469,9 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             clientes = new Clientes(nombreCliente, apellidoCliente, Integer.parseInt(cedulaCliente), Integer.parseInt(telefonoCliente));
             //Si el cliente da clic en el botón modificar
             if (accion.equals("modificar")) {
-
+                //Llama al método que se encarga de modificar un cliente específico en todas las facturas.
+                String clienteNuevo = nombreCliente + " " + apellidoCliente + " - " + cedulaCliente;
+                modificarClientesEnFacturas(lstClientes.getSelectedValue().replace("\n", ""), clienteNuevo);
                 lstClientes.setModel(gestionarArchivos.modificarLista("Archivos/clientes.txt", lstClientes.getSelectedValue().replace("\n", ""), clientes.toString()));
                 lstClientesVentas.setModel(gestionarArchivos.modificarLista("Archivos/clientes.txt", lstClientes.getSelectedValue(), clientes.toString()));
                 modeloClientes = (DefaultListModel) lstClientes.getModel();
@@ -1472,6 +1489,29 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor rellene todos los campos, no deben existir campos vacíos");
         }
 
+    }
+
+    /**
+     * Método encargado de actualizar en el historial de facturas, los datos de
+     * un cliente una vez que este ha sido modificado.
+     */
+    public void modificarClientesEnFacturas(String clienteViejo, String clienteNuevo) {
+        String[] clientesEnFacturas = extraerDatosSeleccionados(clienteViejo);
+        String formatoClienteViejo = clientesEnFacturas[0] + " " + clientesEnFacturas[1] + " - " + clientesEnFacturas[2];
+
+        for (int i = 0; i < lstHistorialVentas.getModel().getSize(); i++) {
+            //Si encuentra el cliente viejo en el historial de las facturas entra a la condición.
+            if (lstHistorialVentas.getModel().getElementAt(i).contains(formatoClienteViejo)) {
+
+                //Se modifican los cambios en la lista de facturas
+                lstHistorialVentas.setModel(gestionarArchivos.modificarLista("Archivos/facturas.txt", lstHistorialVentas.getModel().getElementAt(i), lstHistorialVentas.getModel().getElementAt(i).replace(formatoClienteViejo, clienteNuevo)));
+                //Se actualiza la lista de facturas.
+                modeloHistorialVentas = (DefaultListModel) lstHistorialVentas.getModel();
+                //Se guarda en el archivo facturas.txt el nuevo estado de la factura
+                gestionarArchivos.GuardarATexto("Archivos/facturas.txt", recorrerLista(lstHistorialVentas));
+
+            }
+        }
     }
 
     /**
@@ -1722,7 +1762,6 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarProductoDialog;
     private javax.swing.JButton btnAgregarProductos;
     private javax.swing.JButton btnAnularFactura;
-    private javax.swing.JButton btnComprasPorMes;
     private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton btnEliminarProductos;
     private javax.swing.JButton btnIniciarSesion;
@@ -1787,7 +1826,6 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private javax.swing.JList<String> lstProductosVentas;
     private javax.swing.JPanel pnlClientesTab;
     private javax.swing.JPanel pnlProductosTab;
-    private javax.swing.JPanel pnlReportes;
     private javax.swing.JPanel pnlVentasTab;
     private javax.swing.JTabbedPane tabPaneOpciones;
     private javax.swing.JTextField txtApellidosCliente;
