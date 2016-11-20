@@ -7,13 +7,18 @@ package vista;
 
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -125,6 +130,9 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         lstClientes = new javax.swing.JList<>();
         btnSalirProductos1 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        btnVentasPorMes = new javax.swing.JButton();
+        cboReportePorMes = new javax.swing.JComboBox<>();
         pnlProductosTab = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         btnEliminarProductos = new javax.swing.JButton();
@@ -570,6 +578,41 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Seleccione un mes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), java.awt.Color.red)); // NOI18N
+
+        btnVentasPorMes.setText("Ventas por mes");
+        btnVentasPorMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentasPorMesActionPerformed(evt);
+            }
+        });
+
+        cboReportePorMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addComponent(btnVentasPorMes, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addComponent(cboReportePorMes, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cboReportePorMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(btnVentasPorMes, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout pnlClientesTabLayout = new javax.swing.GroupLayout(pnlClientesTab);
         pnlClientesTab.setLayout(pnlClientesTabLayout);
         pnlClientesTabLayout.setHorizontalGroup(
@@ -579,6 +622,8 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 .addGroup(pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlClientesTabLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(227, 227, 227)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlClientesTabLayout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -593,15 +638,20 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         pnlClientesTabLayout.setVerticalGroup(
             pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlClientesTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGroup(pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlClientesTabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlClientesTabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(7, 7, 7)
                 .addGroup(pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSalirProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         tabPaneOpciones.addTab("Comercial", pnlClientesTab);
@@ -1380,10 +1430,20 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         Collections.sort(topProductosVendidos);
         //Se crea un string que mostrará el top de productos
         String productosMasVendidosMostrar = "";
-        //Se recorre la lista del último hasta el primero, ya que están ordenados en forma ascendente y se busca mostrarlos en forma descendente
+        //Se utiliza el bubble sort para ordenar los elementos, se extrae la cantidad de cada producto y se 
         for (int i = topProductosVendidos.size() - 1; i >= 0; i--) {
+            for (int j = 1; j < topProductosVendidos.size(); j++) {
+                String[] productoIndividual = topProductosVendidos.get(j).split(" ");
+                int cantidadProductoIndividual = Integer.parseInt(productoIndividual[0]);
+                String[] productoIndividualMenosUno = topProductosVendidos.get(j - 1).split(" ");
+                int cantidadComparadaMenosUno = Integer.parseInt(productoIndividualMenosUno[0]);
+                if (cantidadComparadaMenosUno > cantidadProductoIndividual) {
+                    String temporal = topProductosVendidos.get(j - 1);
+                    topProductosVendidos.set(j - 1, topProductosVendidos.get(j));
+                    topProductosVendidos.set(j, temporal);
+                }
+            }
             productosMasVendidosMostrar += topProductosVendidos.get(i) + "\n";
-            System.out.println(topProductosVendidos.get(i));
         }
         //Se imprime el top de productos por cantidad.
         JOptionPane.showMessageDialog(rootPane, "Estos son el top de productos vendidos en orden: \n" + productosMasVendidosMostrar);
@@ -1433,6 +1493,125 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private void btnSalirProductos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirProductos1ActionPerformed
         limpiarLogin();
     }//GEN-LAST:event_btnSalirProductos1ActionPerformed
+
+    private void btnVentasPorMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasPorMesActionPerformed
+        String reportePorMes = "";
+        for (int i = 0; i < lstHistorialVentas.getModel().getSize(); i++) {
+            try {
+                String facturaDatos[] = extraerDatosSeleccionados(lstHistorialVentas.getModel().getElementAt(i));
+
+                String fecha = facturaDatos[0].substring(0, 10);
+                SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
+                Date convertedCurrentDate = formateador.parse(fecha);
+                String fechaSeleccionada = formateador.format(convertedCurrentDate);
+                switch (cboReportePorMes.getSelectedItem().toString()) {
+                    case "Enero":
+                        if (compararFechasConDate("2016-01-01", "2016-01-31", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Febrero":
+                        if (compararFechasConDate("2016-02-01", "2016-02-28", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Marzo":
+                        if (compararFechasConDate("2016-03-01", "2016-03-31", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Abril":
+                        if (compararFechasConDate("2016-04-01", "2016-04-30", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Mayo":
+                        if (compararFechasConDate("2016-05-01", "2016-05-30", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Junio":
+                        if (compararFechasConDate("2016-06-01", "2016-06-30", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Julio":
+                        if (compararFechasConDate("2016-07-01", "2016-07-31", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Agosto":
+                        if (compararFechasConDate("2016-08-01", "2016-08-31", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Septiembre":
+                        if (compararFechasConDate("2016-09-01", "2016-09-30", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Octubre":
+                        if (compararFechasConDate("2016-10-01", "2016-10-31", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+
+                        }
+                        break;
+                    case "Noviembre":
+                        if (compararFechasConDate("2016-11-01", "2016-11-30", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                        }
+                        break;
+
+                    case "Diciembre":
+                        if (compararFechasConDate("2016-12-01", "2016-12-31", fechaSeleccionada)) {
+                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                        }
+                        break;
+
+                }
+            } catch (ParseException ex) {
+                Logger.getLogger(FacturarPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        JOptionPane.showMessageDialog(rootPane, "Reporte en el mes de " + cboReportePorMes.getSelectedItem() + "\n" + reportePorMes);
+
+    }//GEN-LAST:event_btnVentasPorMesActionPerformed
+
+    /**
+     * Comparamos las Fechas
+     *
+     * @param fecha1
+     * @param fecha2
+     * @return
+     */
+    private boolean compararFechasConDate(String fechaMenor, String fecha2, String fechaComparar) {
+        try {
+            /**
+             * Obtenemos las fechas enviadas en el formato a comparar
+             */
+            SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaDateMenor = formateador.parse(fechaMenor);
+            Date fechaDateMayor = formateador.parse(fecha2);
+            Date fechaDateComparar = formateador.parse(fechaComparar);
+            if (fechaDateMenor.before(fechaDateComparar) && fechaDateComparar.before(fechaDateMayor)) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (ParseException e) {
+            System.out.println("Se Produjo un Error!!!  " + e.getMessage());
+            return false;
+        }
+    }
 
     /**
      * Método encargado de revisar si un item se puede eliminar basado en las
@@ -1494,6 +1673,9 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     /**
      * Método encargado de actualizar en el historial de facturas, los datos de
      * un cliente una vez que este ha sido modificado.
+     *
+     * @param clienteViejo
+     * @param clienteNuevo
      */
     public void modificarClientesEnFacturas(String clienteViejo, String clienteNuevo) {
         String[] clientesEnFacturas = extraerDatosSeleccionados(clienteViejo);
@@ -1505,6 +1687,32 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
                 //Se modifican los cambios en la lista de facturas
                 lstHistorialVentas.setModel(gestionarArchivos.modificarLista("Archivos/facturas.txt", lstHistorialVentas.getModel().getElementAt(i), lstHistorialVentas.getModel().getElementAt(i).replace(formatoClienteViejo, clienteNuevo)));
+                //Se actualiza la lista de facturas.
+                modeloHistorialVentas = (DefaultListModel) lstHistorialVentas.getModel();
+                //Se guarda en el archivo facturas.txt el nuevo estado de la factura
+                gestionarArchivos.GuardarATexto("Archivos/facturas.txt", recorrerLista(lstHistorialVentas));
+
+            }
+        }
+    }
+
+    /**
+     * Método encargado de actualizar en el historial de facturas, los datos de
+     * un producto una vez que este ha sido modificado.
+     *
+     * @param productoViejo
+     * @param productoNuevo
+     */
+    public void modificarProductosEnFacturas(String productoViejo, String productoNuevo) {
+        String[] productosEnFacturas = extraerDatosSeleccionados(productoViejo);
+        String formatoProductosViejo = productosEnFacturas[0] + " - " + productosEnFacturas[1] + " - " + productosEnFacturas[2] + " - " + productosEnFacturas[5] + " - " + productosEnFacturas[3] + " - " + productosEnFacturas[4];
+
+        for (int i = 0; i < lstHistorialVentas.getModel().getSize(); i++) {
+            //Si encuentra el producto viejo en el historial de las facturas entra a la condición.
+            if (lstHistorialVentas.getModel().getElementAt(i).contains(formatoProductosViejo)) {
+
+                //Se modifican los cambios en la lista de facturas
+                lstHistorialVentas.setModel(gestionarArchivos.modificarLista("Archivos/facturas.txt", lstHistorialVentas.getModel().getElementAt(i), lstHistorialVentas.getModel().getElementAt(i).replace(formatoProductosViejo, productoNuevo)));
                 //Se actualiza la lista de facturas.
                 modeloHistorialVentas = (DefaultListModel) lstHistorialVentas.getModel();
                 //Se guarda en el archivo facturas.txt el nuevo estado de la factura
@@ -1567,6 +1775,8 @@ public class FacturarPrincipal extends javax.swing.JFrame {
             productos = new Productos(1, nombreCategoria, referencia, nombreProducto, precio, talla, color, cantidadDisponible);
             //Si dan clic en el botón modificar
             if (accion.equals("modificar")) {
+                String productoNuevo = nombreCategoria + " - " + referencia + " - " + nombreProducto + " - " + precio + " - " + talla + " - " + color;
+                modificarProductosEnFacturas(lstProductos.getSelectedValue().replace("\n", ""), productoNuevo);
                 System.out.println("Nuevo: " + productos.toString() + "\n Viejo: " + lstProductos.getSelectedValue());
                 lstProductos.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", lstProductos.getSelectedValue().replace("\n", ""), productos.toString()));
                 lstProductosVentas.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", lstProductos.getSelectedValue(), productos.toString()));
@@ -1773,8 +1983,10 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnSalirFacturacion;
     private javax.swing.JButton btnSalirProductos;
     private javax.swing.JButton btnSalirProductos1;
+    private javax.swing.JButton btnVentasPorMes;
     private javax.swing.JComboBox<String> cboCategoriaProductos;
     private javax.swing.JComboBox<String> cboCategoriaProductosDialog;
+    private javax.swing.JComboBox<String> cboReportePorMes;
     private javax.swing.JComboBox<String> cboTallasProductos;
     private javax.swing.JComboBox<String> cboTallasProductosDialog;
     private javax.swing.JDialog dlgCrearProducto;
@@ -1814,6 +2026,7 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

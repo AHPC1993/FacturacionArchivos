@@ -1,6 +1,10 @@
-2016-10-19-16:18 - Pantalón - 7788 - Diesel - 45000.0 - XXL - Negro - 1 - 1 - 45000.0 -- Allan Perez - 1035 - Vigente - Factura
+2016-10-19-16:18 - Pantalón - 11 - Diesel - 45000.0 - XXL - Negro - 1 - 1 - 45000.0 -- Allan Perez - 1035 - Vigente - Factura
 2016-10-19-16:19 - Pantalón - 66 - Levis - 56000.0 - XS - Azul 2 - 38 - 15 - 840000.0 -- Jenny Johanna Giraldo - 1203 - Vigente - Factura
 2016-10-19-16:19 - Zapatos - 11 - Mariposas - 10000.0 - L - negro - 11 - 5 - 50000.0 -- Luis Davila - 1231 - Vigente - Factura
-2016-10-19-16:19 - Camisas - 75 - Polo - 56000.0 - L - Rojo - 1 - 1 - 56000.0 -- Luis Davila - 1231 - Vigente - Factura
-2016-10-19-16:19 - Blusas - 123 - Poo - 20000.0 - XS - Rosada - 39 - 9 - 180000.0 -- Allan Perez - 1035 - Vigente - Factura
-2016-10-19-16:19 - Zapatos - 144 - Converse - 200000.0 - 28 - blancos - 95 - 5 - 1000000.0 -- Allan Perez - 1035 - Vigente - Factura
+2016-05-19-16:19 - Camisas - 3445 - Polos - 100000.0 - XS - Azules - 1 - 1 - 56000.0 -- Luis Davila - 1231 - Vigente - Factura
+2016-01-19-16:19 - Blusas - 123 - Poo - 20000.0 - XS - Rosada - 39 - 9 - 180000.0 -- Allan Perez - 1035 - Vigente - Factura
+2016-01-19-16:19 - Zapatos - 144 - Converse - 200000.0 - 28 - blancos - 95 - 5 - 1000000.0 -- Allan Perez - 1035 - Vigente - Factura
+2016-11-20-12:15 - Pantalón - 66 - Levis - 56000.0 - XS - Azul 2 - 23 - 20 - 1120000.0 -- Allan Perez - 1035 - Vigente - Factura
+2016-11-20-12:15 - Blusas - 123 - Poo - 20000.0 - XS - Rosada - 30 - 25 - 500000.0 -- Jenny Johanna Giraldo - 1203 - Vigente - Factura
+2016-09-20-12:32 - Camisas - 3445 - Polos - 100000.0 - XS - Azules - 50 - 45 - 4500000.0 -- Luis Davila - 1231 - Vigente - Factura
+2016-09-20-12:32 - Pantalón - 11 - Diesel - 45000.0 - XXL - Negro - 100 - 5 - 225000.0 -- Jenny Johanna Giraldo - 1203 - Vigente - Factura
