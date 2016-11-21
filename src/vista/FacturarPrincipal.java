@@ -593,15 +593,12 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addContainerGap(36, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addComponent(btnVentasPorMes, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addComponent(cboReportePorMes, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cboReportePorMes, 0, 184, Short.MAX_VALUE)
+                    .addComponent(btnVentasPorMes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,13 +635,10 @@ public class FacturarPrincipal extends javax.swing.JFrame {
         pnlClientesTabLayout.setVerticalGroup(
             pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlClientesTabLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlClientesTabLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlClientesTabLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(pnlClientesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1496,84 +1490,104 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
     private void btnVentasPorMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasPorMesActionPerformed
         String reportePorMes = "";
+        double totalMes=0;
         for (int i = 0; i < lstHistorialVentas.getModel().getSize(); i++) {
             try {
+                //Se extraen los datos de la factura y se guardan en un vector
                 String facturaDatos[] = extraerDatosSeleccionados(lstHistorialVentas.getModel().getElementAt(i));
-
+               //La factura viene con el valor y el nombre de quien lo compró, toca separarlo con un split -- 
+                String valorVenta[] = facturaDatos[9].split(" -- ");
+                //Se extrae la fecha solamente hasta el día, es decir yyyy-MM-dd se obvia la hora.
                 String fecha = facturaDatos[0].substring(0, 10);
+                //Se crea el formato en que estará la fecha
                 SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
+                //Se crea la fecha tipo date
                 Date convertedCurrentDate = formateador.parse(fecha);
+                //Se aplica el formato a la fecha.
                 String fechaSeleccionada = formateador.format(convertedCurrentDate);
+                //Se mira que mes ha seleccionado el usuario y dependiento manda los parámetros del mes.
                 switch (cboReportePorMes.getSelectedItem().toString()) {
                     case "Enero":
                         if (compararFechasConDate("2016-01-01", "2016-01-31", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Febrero":
                         if (compararFechasConDate("2016-02-01", "2016-02-28", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Marzo":
                         if (compararFechasConDate("2016-03-01", "2016-03-31", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Abril":
                         if (compararFechasConDate("2016-04-01", "2016-04-30", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Mayo":
                         if (compararFechasConDate("2016-05-01", "2016-05-30", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Junio":
                         if (compararFechasConDate("2016-06-01", "2016-06-30", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Julio":
                         if (compararFechasConDate("2016-07-01", "2016-07-31", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Agosto":
                         if (compararFechasConDate("2016-08-01", "2016-08-31", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Septiembre":
                         if (compararFechasConDate("2016-09-01", "2016-09-30", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Octubre":
                         if (compararFechasConDate("2016-10-01", "2016-10-31", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
 
                         }
                         break;
                     case "Noviembre":
                         if (compararFechasConDate("2016-11-01", "2016-11-30", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
                         }
                         break;
 
                     case "Diciembre":
                         if (compararFechasConDate("2016-12-01", "2016-12-31", fechaSeleccionada)) {
                             reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                            totalMes+=Double.parseDouble(valorVenta[0]);
                         }
                         break;
 
@@ -1582,7 +1596,8 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 Logger.getLogger(FacturarPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        JOptionPane.showMessageDialog(rootPane, "Reporte en el mes de " + cboReportePorMes.getSelectedItem() + "\n" + reportePorMes);
+        JOptionPane.showMessageDialog(rootPane, "Reporte en el mes de " + cboReportePorMes.getSelectedItem() + "\n" + reportePorMes + "\nTotal ventas en el mes: " + totalMes);
+        System.out.println(totalMes);
 
     }//GEN-LAST:event_btnVentasPorMesActionPerformed
 
