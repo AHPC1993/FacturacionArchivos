@@ -1301,6 +1301,9 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                     JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
                 String[] datosFactura = extraerDatosSeleccionados(facturaSeleccionada);
                 if ("Vigente".equals(datosFactura[11]) && "Factura".equals(datosFactura[12])) {
+                    int cantidadADevolver = Integer.parseInt(datosFactura[8]);
+                    modificarProductosAnulados(facturaSeleccionada, cantidadADevolver);
+
                     //Se crea la nota crédito
                     String notaCredito = datosFactura[0] + " - " + datosFactura[1] + " - " + datosFactura[2] + " - " + datosFactura[3] + " - " + datosFactura[4] + " - " + datosFactura[5] + " - " + datosFactura[6] + " - " + datosFactura[7] + " - " + datosFactura[8] + " - -" + datosFactura[9] + " - " + datosFactura[10] + " - " + "Vigente" + " - " + "Nota Crédito";
                     //Se reemplaza el estado de la factura seleccionada a el valor Anulada
@@ -1739,6 +1742,45 @@ public class FacturarPrincipal extends javax.swing.JFrame {
                 //Se guarda en el archivo facturas.txt el nuevo estado de la factura
                 gestionarArchivos.GuardarATexto("Archivos/facturas.txt", recorrerLista(lstHistorialVentas));
 
+            }
+        }
+    }
+
+    /**
+     * Método encargado de devolver la cantidad cuando se anula una factura.
+     *
+     * @param productoViejo
+     * @param cantidadADevolver
+     */
+    public void modificarProductosAnulados(String productoViejo, int cantidadADevolver) {
+        String[] productosEnFacturas = extraerDatosSeleccionados(productoViejo);
+        String nombreCategoria = productosEnFacturas[1];
+        int referencia = Integer.parseInt(productosEnFacturas[2]);
+        String nombreProducto = productosEnFacturas[3];
+        String talla = productosEnFacturas[5];
+        String color = productosEnFacturas[6];
+        double precio = Double.parseDouble(productosEnFacturas[4]);
+        String productoNuevo = nombreCategoria + " - " + referencia + " - "  + nombreProducto+" - "  + talla+" - "  + color+" - "  + precio;
+
+        for (int i = 0; i < lstProductos.getModel().getSize(); i++) {
+            //Si encuentra el producto viejo en los productos entra a la condición.
+            if (lstProductos.getModel().getElementAt(i).contains(productoNuevo)) {
+                String[] productoAModificar = extraerDatosSeleccionados(lstProductos.getModel().getElementAt(i));
+                int cantidadExistenteProducto = Integer.parseInt(productoAModificar[6]);
+                productoNuevo+=" - " + (cantidadADevolver+cantidadExistenteProducto);
+
+                //Se modifican los cambios en la lista de facturas
+                lstProductos.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", lstProductos.getModel().getElementAt(i).replace("\n", ""), productoNuevo));
+                lstProductosVentas.setModel(gestionarArchivos.modificarLista("Archivos/productos.txt", lstProductos.getModel().getElementAt(i), productoNuevo));
+               
+                //Se actualiza la lista de productos.
+                modeloProductos = (DefaultListModel) lstProductos.getModel();
+                lstProductosVentas.setModel(modeloProductos);
+                //Se guarda en el archivo productos.txt el nuevo estado de la factura
+                gestionarArchivos.GuardarATexto("Archivos/productos.txt", recorrerLista(lstProductos));
+
+               
+                
             }
         }
     }
