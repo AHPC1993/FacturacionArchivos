@@ -1383,21 +1383,26 @@ public class FacturarPrincipal extends javax.swing.JFrame {
     private void btnProductoMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoMasVendidoActionPerformed
         //Se crea una matriz que contendrá en la primer posición el producto vendido y en la segunda la cantidad que se ha vendido.
         String[][] productosMasVendidos = new String[modeloHistorialVentas.getSize()][2];
+        int cantidadPorProducto = 0;
         //Se recorre la lista del historial de ventas
         for (int i = 0; i < modeloHistorialVentas.getSize(); i++) {
+
             //Se miran los datos del producto que se va a comparar contra toda la lista del historial de ventas
             String datosProducto[] = extraerDatosSeleccionados(modeloHistorialVentas.getElementAt(i).toString());
             //Se agrega a la matriz en la posición i el producto.
             productosMasVendidos[i][0] = datosProducto[1] + " - " + datosProducto[2] + " - " + datosProducto[3] + " - " + datosProducto[4] + " - " + datosProducto[5] + " - " + datosProducto[6];
             //Se crea un entero que tendrá la cantidad que se ha vendido por producto.
-            int cantidadPorProducto = 0;
+            cantidadPorProducto = 0;
             //Se hace un segundo for, para comparar el producto de la matriz, contra el historial de ventas.
             for (int j = 0; j < modeloHistorialVentas.getSize(); j++) {
-                //Se extraen los datos del producto que se está iterando.
-                String datosProductoSeleccionado[] = extraerDatosSeleccionados(modeloHistorialVentas.getElementAt(j).toString());
-                //Se pregunta si el elemento iterado contiene al elemento buscado, de ser así se aumenta la cantidad vendida para ese producto.
-                if (modeloHistorialVentas.getElementAt(j).toString().contains(productosMasVendidos[i][0])) {
-                    cantidadPorProducto += Integer.parseInt(datosProductoSeleccionado[8]);
+                if (lstHistorialVentas.getModel().getElementAt(j).contains("Vigente") && lstHistorialVentas.getModel().getElementAt(j).contains("Factura")) {
+
+                    //Se extraen los datos del producto que se está iterando.
+                    String datosProductoSeleccionado[] = extraerDatosSeleccionados(modeloHistorialVentas.getElementAt(j).toString());
+                    //Se pregunta si el elemento iterado contiene al elemento buscado, de ser así se aumenta la cantidad vendida para ese producto.
+                    if (modeloHistorialVentas.getElementAt(j).toString().contains(productosMasVendidos[i][0])) {
+                        cantidadPorProducto += Integer.parseInt(datosProductoSeleccionado[8]);
+                    }
                 }
             }
             //Después de recorrer el for, se tiene el total vendido para ese producto.
@@ -1490,107 +1495,108 @@ public class FacturarPrincipal extends javax.swing.JFrame {
 
     private void btnVentasPorMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasPorMesActionPerformed
         String reportePorMes = "";
-        double totalMes=0;
+        double totalMes = 0;
         for (int i = 0; i < lstHistorialVentas.getModel().getSize(); i++) {
             try {
-                //Se extraen los datos de la factura y se guardan en un vector
-                String facturaDatos[] = extraerDatosSeleccionados(lstHistorialVentas.getModel().getElementAt(i));
-               //La factura viene con el valor y el nombre de quien lo compró, toca separarlo con un split -- 
-                String valorVenta[] = facturaDatos[9].split(" -- ");
-                //Se extrae la fecha solamente hasta el día, es decir yyyy-MM-dd se obvia la hora.
-                String fecha = facturaDatos[0].substring(0, 10);
-                //Se crea el formato en que estará la fecha
-                SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
-                //Se crea la fecha tipo date
-                Date convertedCurrentDate = formateador.parse(fecha);
-                //Se aplica el formato a la fecha.
-                String fechaSeleccionada = formateador.format(convertedCurrentDate);
-                //Se mira que mes ha seleccionado el usuario y dependiento manda los parámetros del mes.
-                switch (cboReportePorMes.getSelectedItem().toString()) {
-                    case "Enero":
-                        if (compararFechasConDate("2016-01-01", "2016-01-31", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                if (lstHistorialVentas.getModel().getElementAt(i).contains("Vigente") && lstHistorialVentas.getModel().getElementAt(i).contains("Factura")) {
+                    //Se extraen los datos de la factura y se guardan en un vector
+                    String facturaDatos[] = extraerDatosSeleccionados(lstHistorialVentas.getModel().getElementAt(i));
+                    //La factura viene con el valor y el nombre de quien lo compró, toca separarlo con un split -- 
+                    String valorVenta[] = facturaDatos[9].split(" -- ");
+                    //Se extrae la fecha solamente hasta el día, es decir yyyy-MM-dd se obvia la hora.
+                    String fecha = facturaDatos[0].substring(0, 10);
+                    //Se crea el formato en que estará la fecha
+                    SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
+                    //Se crea la fecha tipo date
+                    Date convertedCurrentDate = formateador.parse(fecha);
+                    //Se aplica el formato a la fecha.
+                    String fechaSeleccionada = formateador.format(convertedCurrentDate);
+                    //Se mira que mes ha seleccionado el usuario y dependiento manda los parámetros del mes.
+                    switch (cboReportePorMes.getSelectedItem().toString()) {
+                        case "Enero":
+                            if (compararFechasConDate("2016-01-01", "2016-01-31", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Febrero":
-                        if (compararFechasConDate("2016-02-01", "2016-02-28", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Febrero":
+                            if (compararFechasConDate("2016-02-01", "2016-02-28", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Marzo":
-                        if (compararFechasConDate("2016-03-01", "2016-03-31", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Marzo":
+                            if (compararFechasConDate("2016-03-01", "2016-03-31", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Abril":
-                        if (compararFechasConDate("2016-04-01", "2016-04-30", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Abril":
+                            if (compararFechasConDate("2016-04-01", "2016-04-30", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Mayo":
-                        if (compararFechasConDate("2016-05-01", "2016-05-30", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Mayo":
+                            if (compararFechasConDate("2016-05-01", "2016-05-30", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Junio":
-                        if (compararFechasConDate("2016-06-01", "2016-06-30", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Junio":
+                            if (compararFechasConDate("2016-06-01", "2016-06-30", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Julio":
-                        if (compararFechasConDate("2016-07-01", "2016-07-31", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Julio":
+                            if (compararFechasConDate("2016-07-01", "2016-07-31", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Agosto":
-                        if (compararFechasConDate("2016-08-01", "2016-08-31", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Agosto":
+                            if (compararFechasConDate("2016-08-01", "2016-08-31", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Septiembre":
-                        if (compararFechasConDate("2016-09-01", "2016-09-30", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Septiembre":
+                            if (compararFechasConDate("2016-09-01", "2016-09-30", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Octubre":
-                        if (compararFechasConDate("2016-10-01", "2016-10-31", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                        case "Octubre":
+                            if (compararFechasConDate("2016-10-01", "2016-10-31", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
 
-                        }
-                        break;
-                    case "Noviembre":
-                        if (compararFechasConDate("2016-11-01", "2016-11-30", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
-                        }
-                        break;
+                            }
+                            break;
+                        case "Noviembre":
+                            if (compararFechasConDate("2016-11-01", "2016-11-30", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
 
-                    case "Diciembre":
-                        if (compararFechasConDate("2016-12-01", "2016-12-31", fechaSeleccionada)) {
-                            reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
-                            totalMes+=Double.parseDouble(valorVenta[0]);
-                        }
-                        break;
-
+                        case "Diciembre":
+                            if (compararFechasConDate("2016-12-01", "2016-12-31", fechaSeleccionada)) {
+                                reportePorMes += lstHistorialVentas.getModel().getElementAt(i) + "\n";
+                                totalMes += Double.parseDouble(valorVenta[0]);
+                            }
+                            break;
+                    }
                 }
             } catch (ParseException ex) {
                 Logger.getLogger(FacturarPrincipal.class.getName()).log(Level.SEVERE, null, ex);
